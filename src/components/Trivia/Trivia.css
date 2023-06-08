@@ -1,0 +1,84 @@
+.trivia {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+.question {
+  width: 80%;
+  background: linear-gradient(#100241, black);
+  text-align: center;
+  padding: 30px;
+  border-radius: 20px;
+  font-size: 20px;
+  border: 2px solid white;
+  font-weight: 500;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+.option {
+  background: linear-gradient(#0e0124, #22074d);
+  width: 40%;
+  margin: 0 10px 20px 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px white solid;
+  text-align: center;
+  font-weight: 300;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.option:hover,
+.option.active {
+  background: mediumblue;
+}
+
+.option.correct {
+  animation: correct 3s ease forwards;
+}
+
+@keyframes correct {
+  0%,
+  22%,
+  42% {
+    background: mediumblue;
+  }
+  20%,
+  40%,
+  60% {
+    background: linear-gradient(#0e0124, #22074d);
+  }
+  62%,
+  100% {
+    background: green;
+  }
+}
+
+.option.wrong {
+  animation: wrong 3s ease forwards;
+}
+
+@keyframes wrong {
+  0%,
+  22%,
+  42% {
+    background: mediumblue;
+  }
+  20%,
+  40%,
+  60% {
+    background: linear-gradient(#0e0124, #22074d);
+  }
+  62%,
+  100% {
+    background: crimson;
+  }
+}
