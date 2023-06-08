@@ -1,0 +1,27 @@
+.startUser {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.startUsername {
+  height: 20px;
+  width: 30%;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.startButton {
+  height: 40px;
+  width: 32%;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+}
