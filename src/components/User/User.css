@@ -1,27 +1,33 @@
 .startUser {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
 }
+
 .startUsername {
-  height: 20px;
+  height: 40px;
   width: 30%;
   border: none;
   border-radius: 5px;
   text-align: center;
-  padding: 10px;
-  margin-bottom: 10px;
   font-size: 18px;
+  margin-bottom: 1%;
+}
+
+.startUsername:focus {
+  outline: none;
 }
 
 .startButton {
   height: 40px;
-  width: 32%;
+  width: 30%;
   border: none;
   border-radius: 5px;
   text-align: center;
   font-size: 18px;
   font-weight: 500;
+  cursor: pointer;
 }
