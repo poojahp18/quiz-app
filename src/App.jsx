@@ -9,6 +9,7 @@ function App() {
   const [timeOut, setTimeOut] = useState(false);
   const [earned, setEarned] = useState(0);
   const [username, setUsername] = useState("");
+  const [selectedAnswer, setSelectedAnswer] = useState(null);
 
   const data = [
     {
@@ -117,6 +118,7 @@ function App() {
                     <Timer
                       questionNumber={questionNumber}
                       setTimeOut={setTimeOut}
+                      selectedAnswer={selectedAnswer}
                     />
                   </div>
                 </div>
@@ -126,6 +128,8 @@ function App() {
                     setTimeOut={setTimeOut}
                     questionNumber={questionNumber}
                     setQuestionNumber={setQuestionNumber}
+                    selectedAnswer={selectedAnswer}
+                    setSelectedAnswer={setSelectedAnswer}
                   />
                 </div>
               </>

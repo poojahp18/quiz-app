@@ -11,9 +11,10 @@ export default function Trivia({
   setTimeOut,
   questionNumber,
   setQuestionNumber,
+  selectedAnswer,
+  setSelectedAnswer,
 }) {
   const [question, setQuestion] = useState(null);
-  const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [className, setClassName] = useState("option");
 
   const [letsPlay] = useSound(play);
@@ -38,13 +39,15 @@ export default function Trivia({
     if (selectedAnswer) return;
     setSelectedAnswer(ans);
     setClassName("option active");
-    delay(3000, () => {
+
+    delay(2000, () => {
       setClassName(ans.correct ? "option correct" : "option wrong");
     });
-    delay(4000, () => {
+    delay(3000, () => {
       if (ans.correct) {
+        setTimeOut(false);
         correctAnswer();
-        delay(3000, () => {
+        delay(2000, () => {
           setQuestionNumber((prev) => prev + 1);
           setSelectedAnswer(null);
         });
@@ -52,6 +55,7 @@ export default function Trivia({
         wrongAnswer();
         delay(2000, () => {
           setTimeOut(true);
+          setSelectedAnswer(null);
         });
       }
     });
@@ -63,7 +67,9 @@ export default function Trivia({
       <div className="options">
         {question?.answers.map((answer) => (
           <div
-            className={selectedAnswer === answer ? className : "option"}
+            className={
+              selectedAnswer?.text === answer.text ? className : "option"
+            }
             onClick={() => handleClick(answer)}
           >
             {answer.text}
